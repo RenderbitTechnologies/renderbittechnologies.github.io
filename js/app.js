@@ -24,11 +24,13 @@
 	
 	$('.typed').typed({
 		strings: ["bring ideas to life.", "build your web presence.", "dream in code.", "are Renderbit."],
-		typeSpeed: 0.5,
+		typeSpeed: 1,
 		cursorChar: "|",
 		backDelay: 1500,
-		backSpeed: 0.5,
+		backSpeed: 1,
 		startDelay: 500,
 		loop: true
 	});
+	
+	$('textarea').autogrow();
 })(jQuery);
