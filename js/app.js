@@ -33,6 +33,13 @@
 		$('body, html').animate({scrollTop: pos});
 	});
 	
+	$('textarea').autogrow();
+	
+	$(document).ready(function () {
+		$('.loader').remove();
+		$('body').toggleClass('no-overflow');
+	});
+	
 	$('.typed').typed({
 		strings: ["bring ideas to life.", "build your web presence.", "dream in code.", "are Renderbit."],
 		typeSpeed: 1,
@@ -45,6 +52,4 @@
 			$("#home-wrapper").backstretch("next");
 		}
 	});
-	
-	$('textarea').autogrow();
 })(jQuery);

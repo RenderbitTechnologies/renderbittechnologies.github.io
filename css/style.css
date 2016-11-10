@@ -1,6 +1,97 @@
-/*
- * Globals
- */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1000;
+  background-color: #333;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+.loader > .spinner-logo {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 75px;
+}
+
+.loader > .spinner {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 2s linear infinite;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  margin: -150px 0 0 -150px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+}
+
+.loader > .spinner:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #e74c3c;
+  animation: spin 3s linear infinite;
+  -webkit-animation: spin 3s linear infinite;
+  -moz-animation: spin 3s linear infinite;
+}
+
+.loader > .spinner:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #f9c922;
+  animation: spin 1.5s linear infinite;
+  -webkit-animation: spin 1.5s linear infinite;
+  -moz-animation: spin 1.5s linear infinite;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.no-overflow {
+  overflow: hidden;
+}
 
 /* Links */
 a,
@@ -36,7 +127,7 @@ body {
 body {
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
