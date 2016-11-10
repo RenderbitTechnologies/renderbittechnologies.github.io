@@ -25,7 +25,7 @@
 	$('.typed').typed({
 		strings: ["bring ideas to life.", "build your web presence.", "dream in code.", "are Renderbit."],
 		typeSpeed: 0.5,
-		cursorChar: "",
+		cursorChar: "|",
 		backDelay: 1500,
 		backSpeed: 0.5,
 		startDelay: 500,
