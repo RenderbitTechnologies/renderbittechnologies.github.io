@@ -35,11 +35,6 @@
 	
 	$('textarea').autogrow();
 	
-	$(document).ready(function () {
-		$('.loader').remove();
-		$('body').toggleClass('no-overflow');
-	});
-	
 	$('.typed').typed({
 		strings: ["bring ideas to life.", "build your web presence.", "dream in code.", "are Renderbit."],
 		typeSpeed: 1,
@@ -50,6 +45,15 @@
 		loop: true,
 		preStringTyped: function() {
 			$("#home-wrapper").backstretch("next");
+		}
+	});
+
+	var flag = false;
+	$('#home-wrapper').on("backstretch.after", function (e, instance, index) {
+		if(!flag && index == 1) {
+			flag = true;
+			$('.loader').remove();
+			$('body').toggleClass('no-overflow');
 		}
 	});
 })(jQuery);
