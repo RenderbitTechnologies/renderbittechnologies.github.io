@@ -1,4 +1,15 @@
 (function($) {
+	$("#home-wrapper").backstretch([
+		"img/slide-4.jpg",
+		"img/slide-1.jpg",
+		"img/slide-2.jpg",
+		"img/slide-3.jpg"
+	], {
+		fade: 1000
+	});
+	
+	$("#home-wrapper").backstretch("pause");
+	
 	$('[data-toggle="tooltip"]').tooltip();
 
 	// handle links with @href started with '#' only
@@ -29,7 +40,10 @@
 		backDelay: 1500,
 		backSpeed: 1,
 		startDelay: 500,
-		loop: true
+		loop: true,
+		preStringTyped: function() {
+			$("#home-wrapper").backstretch("next");
+		}
 	});
 	
 	$('textarea').autogrow();
