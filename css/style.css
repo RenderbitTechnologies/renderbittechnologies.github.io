@@ -72,6 +72,10 @@ body {
   color: #fff;
 }
 
+.masthead-brand > img {
+  height: 50px;
+}
+
 .masthead-nav > li {
   display: inline-block;
 }
@@ -237,5 +241,16 @@ input[type=number]:focus,
   .mastfoot,
   .cover-container {
     width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead-brand > img {
+    display: block;
+	margin: 0 auto;
+  }
+  
+  #home-wrapper .masthead-brand > img {
+    height: auto;
   }
 }
