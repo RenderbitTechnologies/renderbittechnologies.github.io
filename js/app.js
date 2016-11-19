@@ -50,6 +50,40 @@
 				$("#home-wrapper").backstretch("next");
 			}
 		});
+		
+		$('#contactForm').submit(function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+			
+			var $form = $(this);
+			$form.ajaxSubmit({
+				success: function () {
+					$.notify({
+						icon: 'glyphicon glyphicon-ok pull-left',
+						title: '<strong>Form submitted</strong><br>',
+						message: 'Your data has been successfully submitted!'
+					}, {
+						type: "success",
+						showProgressbar: false,
+						allow_dismiss: true
+					});
+					$form[0].reset();
+				},
+				error: function () {
+					$.notify({
+						icon: 'glyphicon glyphicon-warning-sign pull-left',
+						title: '<strong>Error</strong><br>',
+						message: 'An error occured. Please submit again.'
+					}, {
+						type: "danger",
+						showProgressbar: false,
+						allow_dismiss: true
+					});
+				}
+			});
+			
+			return false;
+		});
 
 		var flag = false;
 		$('#home-wrapper').on("backstretch.after", function (e, instance, index) {
