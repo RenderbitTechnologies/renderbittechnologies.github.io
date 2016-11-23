@@ -90,7 +90,7 @@
 			if(!flag && index == 1) {
 				flag = true;
 				$('.loader').remove();
-				$('body').toggleClass('no-overflow');
+				$('html, body').toggleClass('no-overflow');
 			}
 		});
 	});
